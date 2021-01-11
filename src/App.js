@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import react from "react";
+import Accordion from "./components/Accordion";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const items = [
+   {
+      title: "who is bizan ?",
+      content: "He is the coolest guy",
+   },
+   {
+      title: "what is the real name of bizan ?",
+      content: "it is biswanath",
+   },
+   {
+      title: "which the best food in the world ?",
+      content: "It is noodles!",
+   },
+];
 
-export default App;
+export default () => {
+   return (
+      <div>
+         <Accordion items={items} />
+      </div>
+   );
+};
