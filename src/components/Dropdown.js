@@ -7,11 +7,13 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
 	useEffect(() => {
 		const onBodyClick = (event) => {
 			console.log("one");
+			if (ref.current === null) return; //* jugar..
 			if (ref.current.contains(event.target)) return;
 			SetOpen(false);
 		};
 		document.body.addEventListener("click", onBodyClick);
 
+		//^clean-up code
 		return () => {
 			console.log("two");
 			document.body.removeEventListener("click", onBodyClick);
