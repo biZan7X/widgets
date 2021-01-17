@@ -2,6 +2,7 @@ import react, { useState } from "react";
 import Accordion from "./components/Accordion";
 import Dropdown from "./components/Dropdown";
 import Search from "./components/Search";
+import Translate from "./components/Translate";
 
 const items = [
 	{
@@ -34,22 +35,9 @@ const options = [
 ];
 
 export default () => {
-	const [selected, Setselected] = useState(options[0]);
-	const [showDropDown, setShowDropDown] = useState(true);
-
 	return (
 		<div>
-			<button onClick={() => setShowDropDown(!showDropDown)}>
-				Toggle Drop down
-			</button>
-
-			{showDropDown ? (
-				<Dropdown
-					selected={selected}
-					onSelectedChange={Setselected}
-					options={options}
-				/>
-			) : null}
+			<Translate />
 		</div>
 	);
 };
